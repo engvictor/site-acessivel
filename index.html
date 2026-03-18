@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Site Acessível</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      transition: all 0.3s;
+      padding: 20px;
+      background-color: #fefefe;
+      color: #333;
+    }
+
+    .controls {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: #eee;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
+
+    .high-contrast {
+      background: black;
+      color: yellow;
+    }
+
+    .large-text {
+      font-size: 1.5em;
+    }
+
+    /* Daltonismo - cores visíveis */
+    .protanopia .color-red { background-color: #ffcccb !important; }
+    .deuteranopia .color-green { background-color: #b0e0a8 !important; }
+
+    .section {
+      margin-bottom: 30px;
+      padding: 15px;
+      border-radius: 8px;
+      background-color: #e6f2ff;
+    }
+
+    .section h2 {
+      margin-top: 0;
+      color: #003366;
+    }
+
+    .color-red { color: red; font-weight: bold; }
+    .color-green { color: green; font-weight: bold; }
+    .color-blue { color: blue; font-weight: bold; }
+    .color-orange { color: orange; font-weight: bold; }
+    .color-purple { color: purple; font-weight: bold; }
+
+    button {
+      margin: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button:hover { background-color: #ddd; }
+
+  </style>
+</head>
+<body>
+
+  <div class="controls">
+    <strong>Acessibilidade</strong><br>
+    <button onclick="toggleContrast()">Alto Contraste</button>
+    <button onclick="increaseText()">Aumentar Texto</button>
+    <button onclick="normalText()">Texto Normal</button>
+    <button onclick="setProtanopia()">Protanopia</button>
+    <button onclick="setDeuteranopia()">Deuteranopia</button>
+    <button onclick="resetView()">Resetar</button>
+  </div>
+
+  <h1>Bem-vindo ao Site Acessível</h1>
+
+  <div class="section">
+    <h2>O que é Acessibilidade?</h2>
+    <p>
+      <span class="color-red">Acessibilidade</span> significa criar ambientes, produtos e serviços que possam ser usados por todas as pessoas, independentemente de suas habilidades físicas, sensoriais ou cognitivas.  
+      É sobre **igualdade de oportunidades**, participação plena na sociedade e respeito às diferenças.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>O que é Acessibilidade Digital?</h2>
+    <p>
+      <span class="color-green">Acessibilidade digital</span> aplica os mesmos princípios ao mundo online.  
+      Significa que sites, aplicativos e sistemas devem ser projetados para que pessoas com diferentes capacidades possam utilizá-los facilmente.
+    </p>
+    <p>
+      Exemplos incluem textos legíveis, contraste adequado, leitores de tela, navegação por teclado e ajustes para daltonismo.  
+      Isso garante que todos possam acessar informação e serviços sem barreiras.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Exemplo de Cores para Daltonismo</h2>
+    <p>
+      <span class="color-red">Vermelho</span>, <span class="color-green">Verde</span>, <span class="color-blue">Azul</span>, <span class="color-orange">Laranja</span>, <span class="color-purple">Roxo</span>  
+      Use os botões “Protanopia” e “Deuteranopia” para ver como essas cores mudam visualmente.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Deficiência Visual e Daltonismo no Mundo</h2>
+    <p>
+      Estima-se que mais de <span class="color-red">2,2 bilhões de pessoas</span> tenham algum tipo de deficiência visual no mundo.  
+      Já o <span class="color-green">daltonismo</span> afeta cerca de 8% dos homens e 0,5% das mulheres, totalizando milhões de pessoas que enxergam cores de forma diferente.
+    </p>
+    <p>
+      Apesar desses números, a sociedade muitas vezes ignora as necessidades dessas pessoas. Sites, aplicativos e serviços continuam sendo criados sem pensar em acessibilidade, tornando o mundo digital e físico **injustamente restritivo** para quem precisa de adaptações.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Por que isso importa?</h2>
+    <p>
+      Ignorar acessibilidade é excluir pessoas da educação, do trabalho, do lazer e da vida social.  
+      Pequenas mudanças, como contraste adequado, cores adaptadas, textos legíveis e alternativas de navegação, podem tornar a vida de milhões **mais justa e inclusiva**.
+    </p>
+    <p>
+      <span class="color-blue">A acessibilidade não é um luxo, é um direito.</span>
+    </p>
+  </div>
+
+  <script>
+    function toggleContrast() { document.body.classList.toggle('high-contrast'); }
+    function increaseText() { document.body.classList.add('large-text'); }
+    function normalText() { document.body.classList.remove('large-text'); }
+    function setProtanopia() { 
+      document.body.classList.remove('deuteranopia'); 
+      document.body.classList.add('protanopia'); 
+    }
+    function setDeuteranopia() { 
+      document.body.classList.remove('protanopia'); 
+      document.body.classList.add('deuteranopia'); 
+    }
+    function resetView() { document.body.className = ''; }
+  </script>
+
+</body>
+</html>
